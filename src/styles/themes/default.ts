@@ -4,6 +4,7 @@ export const defaultTheme = {
   blue: "#4EA8DE",
   blueDark: "#1E6F9F",
   danger: "#E25858",
+  backgroundHome: "#454545",
 
   "gray-700": "#0D0D0D",
   "gray-600": "#1A1A1A",

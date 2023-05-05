@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const HomeStyled = styled.div``
+export const FormStyled = styled.div``

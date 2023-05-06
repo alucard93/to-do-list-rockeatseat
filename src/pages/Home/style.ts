@@ -7,7 +7,24 @@ export const HomeStyled = styled.div`
 
   main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    
+  }
+
+  .container {
+    flex-direction: column;
+    max-width: 736px;
+    gap: 64px;
+  }
+
+  .content-form {
+    justify-content: center;
+  }
+
+  .content-task {
+    display: flex;
+    justify-content: center;
   }
 `;

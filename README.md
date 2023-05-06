@@ -1,4 +1,5 @@
 ## Configuração e Inicialização da Aplicação
+### Link vercel: https://to-do-list-rockeatseat.vercel.app/
 
 ### 1. Clone o repositório da aplicação usando o comando abaixo:
 
@@ -52,3 +53,4 @@ Essa aplicação é um To Do List voltado para controle de tarefas, através del
 - Uuid
 - Eslint
 - Prettier
+

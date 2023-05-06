@@ -2,16 +2,17 @@ import styled from "styled-components";
 
 export const ButtonTaskStyled = styled.article`
   display: flex;
+  width: 100%;
   align-items: flex-start;
   padding: 16px;
   gap: 12px;
 
   background: ${({ theme }) => theme["gray-500"]};
-
+  
   border: 1px solid ${({ theme }) => theme["gray-500"]};
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
   border-radius: 8px;
-
+  
   .content-button-task {
     gap: 12px;
   }
@@ -21,11 +22,13 @@ export const ButtonTaskStyled = styled.article`
     width: 17.45px;
     height: 17.45px;
     border: 2px solid ${({ theme }) => theme.blue};
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     outline: none;
     cursor: pointer;
     background-color: ${({ theme }) => theme["gray-500"]};
     transition: 0.5s;
+
 
     &:checked {
       transition: 0.5s;
@@ -54,15 +57,20 @@ export const ButtonTaskStyled = styled.article`
   }
 
   .content-button-task > p {
+    max-width: 590px;
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
+    
+    word-break: break-all;
 
     color: ${({ theme }) => theme["gray-100"]};
+
   }
 
   .content-trash {
     display: flex;
+    
     justify-content: center;
     align-items: center;
     width: 24px;

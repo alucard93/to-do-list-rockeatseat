@@ -9,6 +9,8 @@ export const FormStyled = styled.form`
 
   margin-top: -26px;
   height: 52px;
+  
+  gap: 8px;
 
   & > input {
     display: flex;

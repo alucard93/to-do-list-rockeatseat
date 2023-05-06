@@ -6,11 +6,12 @@ export const HomeStyled = styled.div`
   background-color: ${({ theme }) => theme.backgroundHome};
 
   main {
+    padding: 0 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    
+    min-height: 451px;
   }
 
   .container {

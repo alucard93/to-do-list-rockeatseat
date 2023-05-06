@@ -22,11 +22,13 @@ export const ButtonTaskStyled = styled.article`
     width: 17.45px;
     height: 17.45px;
     border: 2px solid ${({ theme }) => theme.blue};
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     outline: none;
     cursor: pointer;
     background-color: ${({ theme }) => theme["gray-500"]};
     transition: 0.5s;
+
 
     &:checked {
       transition: 0.5s;
@@ -55,15 +57,20 @@ export const ButtonTaskStyled = styled.article`
   }
 
   .content-button-task > p {
+    max-width: 590px;
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
+    
+    word-break: break-all;
 
     color: ${({ theme }) => theme["gray-100"]};
+
   }
 
   .content-trash {
     display: flex;
+    
     justify-content: center;
     align-items: center;
     width: 24px;

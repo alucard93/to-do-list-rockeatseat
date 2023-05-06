@@ -1,9 +1,15 @@
-import { useState } from "react";
 import { PlusCircle } from "phosphor-react";
 import { FormStyled } from "./style";
 import { ITask } from "../../interfaces/TaskInterface";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 import { v4 as uuidv4 } from "uuid";
+import { validationTextTask } from "../../validators/validationTextTask";
+
+export interface TaskData {
+  title: string;
+}
 
 interface FormProps {
   setTask: React.Dispatch<React.SetStateAction<ITask[]>>;
@@ -11,30 +17,35 @@ interface FormProps {
 }
 
 export const Form = ({ task, setTask }: FormProps) => {
-  const [newTaskText, setNewTaskText] = useState("");
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TaskData>({
+    resolver: yupResolver(validationTextTask),
+  });
 
-  function handleCreateTask(event: { preventDefault: () => void; }) {
-    event.preventDefault();
+  function handleCreateTask(data: any) {
     const newTask: ITask = {
       id: uuidv4(),
-      title: newTaskText,
+      title: data.title,
       isComplete: false,
     };
 
     setTask([...task, newTask]);
-    setNewTaskText("");
+    reset()
   }
 
   return (
-    <FormStyled>
+    <FormStyled onSubmit={handleSubmit(handleCreateTask)}>
       <input
         type="text"
-        name="task"
-        value={newTaskText}
-        placeholder="Adicione uma nova tarefa"
-        onChange={(e) => setNewTaskText(e.target.value)}
+        placeholder={errors.title? errors.title?.message : "Adicione uma nova tarefa" }
+        {...register("title")}
+        maxLength={80}
       />
-      <button onClick={handleCreateTask}>
+      <button type="submit">
         Criar <PlusCircle size={20} />
       </button>
     </FormStyled>

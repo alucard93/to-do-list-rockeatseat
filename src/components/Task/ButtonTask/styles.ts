@@ -2,16 +2,17 @@ import styled from "styled-components";
 
 export const ButtonTaskStyled = styled.article`
   display: flex;
+  width: 100%;
   align-items: flex-start;
   padding: 16px;
   gap: 12px;
 
   background: ${({ theme }) => theme["gray-500"]};
-
+  
   border: 1px solid ${({ theme }) => theme["gray-500"]};
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
   border-radius: 8px;
-
+  
   .content-button-task {
     gap: 12px;
   }
